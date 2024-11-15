@@ -1,0 +1,5 @@
+<!-- doument selection component html -->
+<input type="file" (change)="onFileSelected($event)" accept="application/pdf" />
+<a *ngIf="documentTitle" routerLink="/reader/read" mat-raised-button>
+  <p>Document Title {{ documentTitle }}</p>
+</a>

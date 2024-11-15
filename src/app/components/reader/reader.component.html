@@ -1,1 +1,62 @@
-<p>reader works!</p>
+<!-- reader component html -->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="sidenavOpened" class="sidenav">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-list>
+      <a class="document-selection" routerLink="document-selection">
+        <mat-toolbar mat-subheader class="section-toolbar"
+          >Document Selection</mat-toolbar
+        >
+      </a>
+      <mat-toolbar mat-subheader class="section-toolbar"
+        >Reading Options</mat-toolbar
+      >
+      <mat-select [(value)]="readingMode" placeholder="Select Reading Mode">
+        <mat-option value="bionic">Bionic Reading</mat-option>
+        <mat-option value="static">Static Reading</mat-option>
+      </mat-select>
+      <mat-toolbar mat-subheader class="section-toolbar"
+        >Font Settings</mat-toolbar
+      >
+      <mat-select>
+        <mat-option>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Font Size"
+              type="number"
+              [(ngModel)]="fontSize"
+            />
+          </mat-form-field>
+        </mat-option>
+        <mat-option>
+          <mat-form-field>
+            <input matInput placeholder="Font Color" [(ngModel)]="fontColor" />
+          </mat-form-field>
+        </mat-option>
+        <mat-option>
+          <mat-select placeholder="Font Type">
+            <mat-option>Arial</mat-option>
+            <mat-option>Times New Roman</mat-option>
+          </mat-select>
+        </mat-option>
+      </mat-select>
+
+      <mat-toolbar mat-subheader class="section-toolbar"
+        >Page Settings</mat-toolbar
+      >
+      <mat-form-field>
+        <input matInput placeholder="Background Color" [(ngModel)]="bgColor" />
+      </mat-form-field>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="hamburger-menu">
+      <button mat-icon-button (click)="sidenavOpened = !sidenavOpened">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

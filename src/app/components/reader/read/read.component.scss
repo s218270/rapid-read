@@ -1,0 +1,52 @@
+.page {
+  page-break-after: always;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #072e36;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #f7f7f3;
+  min-width: 150px;
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  word-wrap: break-word;
+}
+
+.static-reader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #290016;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75vw;
+  height: 400px;
+  color: #f7f7f3;
+  border-radius: 50px;
+}
+
+.static-display {
+  padding: 15px;
+  background-color: #010a28;
+  border-radius: 20px;
+  width: 90%;
+  margin-top: 20px;
+  height: 15%;
+  text-align: center;
+  overflow: hidden;
+}
+
+h2 {
+  padding: 15px;
+  margin-bottom: 30px;
+  position: static;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}

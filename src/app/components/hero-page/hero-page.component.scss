@@ -1,3 +1,41 @@
-p {
-    color: black;
+h1 {
+    margin: 0;
+}
+
+.call-to-action {
+    margin-left: 15px;
+    background-color: #2A787A !important;
+    color: #F7F7F3 !important;
+}
+
+
+mat-card {
+    background-color: #010A28;
+    margin: 15px 15px;
+}
+
+mat-card-title {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+mat-card-content {
+    margin-left: 10px;
+}
+
+nav {
+    height: 80px;
+    background-color: #010A28;
+    border-bottom: 2px;
+    border-color: black;
+    border-width: 2px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+h5 {
+    margin: 15px 15px;
 }

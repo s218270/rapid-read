@@ -1,0 +1,38 @@
+<!-- read component html -->
+<mat-slide-toggle (change)="onToggleChange($event)"
+  >Bionic-Static</mat-slide-toggle
+>
+<div class="main-content" *ngIf="documentLoaded">
+  <div>
+    <div
+      class="page"
+      *ngFor="let page of pages; let pageIndex = index"
+      #page
+      [attr.data-page-index]="pageIndex"
+    >
+      <p
+        *ngIf="visiblePages.has(pageIndex)"
+        [innerHTML]="getSanitizedBionicHtml(page)"
+      ></p>
+    </div>
+  </div>
+  <div *ngIf="readingMode == 'static'">
+    <div class="static-reader">
+      <h2 class="static-display">{{ stripHtmlTags(currentWord) }}</h2>
+      <div class="buttons">
+        <button mat-raised-button color="primary" (click)="increaseSpeed()">
+          Increase Speed
+        </button>
+        <button mat-raised-button color="warn" (click)="decreaseSpeed()">
+          Decrease Speed
+        </button>
+        <button mat-raised-button (click)="goBackWords()">
+          Go Back 10 words
+        </button>
+        <button mat-raised-button color="accent" (click)="startStopReading()">
+          {{ isReading ? "Stop" : "Start" }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
