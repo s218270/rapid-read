@@ -1,5 +1,15 @@
 <!-- doument selection component html -->
-<input type="file" (change)="onFileSelected($event)" accept="application/pdf" />
-<a *ngIf="documentTitle" routerLink="/reader/read" mat-raised-button>
+<!-- <input type="file" (change)="onFileSelected($event)" accept="application/pdf" /> -->
+
+<div class="file-input-wrapper">
+  <label for="file-upload" class="custom-file-upload"> Select Document </label>
+  <input
+    id="file-upload"
+    type="file"
+    (change)="onFileSelected($event)"
+    accept="application/pdf"
+  />
+</div>
+<a *ngIf="documentTitle" routerLink="/reader/read" class="document">
   <p>Document Title {{ documentTitle }}</p>
 </a>

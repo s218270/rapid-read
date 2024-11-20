@@ -4,45 +4,14 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-list>
       <a class="document-selection" routerLink="document-selection">
-        <mat-toolbar mat-subheader class="section-toolbar"
+        <mat-toolbar mat-subheader class="section-toolbar menu-item"
           >Document Selection</mat-toolbar
         >
       </a>
-      <mat-toolbar mat-subheader class="section-toolbar"
-        >Reading Options</mat-toolbar
-      >
-      <mat-select [(value)]="readingMode" placeholder="Select Reading Mode">
-        <mat-option value="bionic">Bionic Reading</mat-option>
-        <mat-option value="static">Static Reading</mat-option>
-      </mat-select>
-      <mat-toolbar mat-subheader class="section-toolbar"
+      <mat-toolbar mat-subheader class="section-toolbar menu-item"
         >Font Settings</mat-toolbar
       >
-      <mat-select>
-        <mat-option>
-          <mat-form-field>
-            <input
-              matInput
-              placeholder="Font Size"
-              type="number"
-              [(ngModel)]="fontSize"
-            />
-          </mat-form-field>
-        </mat-option>
-        <mat-option>
-          <mat-form-field>
-            <input matInput placeholder="Font Color" [(ngModel)]="fontColor" />
-          </mat-form-field>
-        </mat-option>
-        <mat-option>
-          <mat-select placeholder="Font Type">
-            <mat-option>Arial</mat-option>
-            <mat-option>Times New Roman</mat-option>
-          </mat-select>
-        </mat-option>
-      </mat-select>
-
-      <mat-toolbar mat-subheader class="section-toolbar"
+      <mat-toolbar mat-subheader class="section-toolbar menu-item"
         >Page Settings</mat-toolbar
       >
       <mat-form-field>

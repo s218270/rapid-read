@@ -1,16 +1,25 @@
 .page {
   page-break-after: always;
-  margin: 20px;
+  margin: 20px 0;
+  justify-self: center;
   padding: 20px;
   border: 1px solid #ccc;
-  background-color: #072e36;
+  background-color: #0d151c;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: #f7f7f3;
   min-width: 150px;
-  max-width: 800px;
+  max-width: 60%;
   width: 100%;
   height: auto;
   word-wrap: break-word;
+}
+
+mat-slide-toggle {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  right: 50%;
+  color: #fff !important;
 }
 
 .static-reader {
@@ -18,7 +27,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #0A0903;
+  background-color: #0d151c;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -29,9 +38,24 @@
   border-radius: 50px;
 }
 
+.reading-speed {
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  font-size: large;
+  align-items: center;
+}
+
+button {
+  border-radius: 50px;
+  background-color: #462031;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
 .static-display {
   padding: 15px;
-  background-color: #010a28;
+  background-color: #0a0903;
   border-radius: 20px;
   width: 90%;
   margin-top: 20px;
@@ -49,4 +73,7 @@ h2 {
 .buttons {
   display: flex;
   flex-direction: column;
+}
+p {
+  color: #fff;
 }

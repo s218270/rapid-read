@@ -1,6 +1,6 @@
 <!-- read component html -->
 <mat-slide-toggle (change)="onToggleChange($event)"
-  >Bionic-Static</mat-slide-toggle
+  ><p>Bionic-Static</p></mat-slide-toggle
 >
 <div class="main-content" *ngIf="documentLoaded">
   <div>
@@ -20,17 +20,85 @@
     <div class="static-reader">
       <h2 class="static-display">{{ stripHtmlTags(currentWord) }}</h2>
       <div class="buttons">
-        <button mat-raised-button color="primary" (click)="increaseSpeed()">
-          Increase Speed
+        <div class="reading-speed">
+          <button (click)="increaseSpeed()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              fill="#fff"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 5v14m-7-7h14"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+          {{ readingSpeed }}
+          <button (click)="decreaseSpeed()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              fill="#fff"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M5 12h14"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <button (click)="goBackWords()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#fff"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-arrow-left-circle"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 8 8 12 12 16"></polyline>
+            <line x1="16" y1="12" x2="8" y2="12"></line>
+          </svg>
         </button>
-        <button mat-raised-button color="warn" (click)="decreaseSpeed()">
-          Decrease Speed
-        </button>
-        <button mat-raised-button (click)="goBackWords()">
-          Go Back 10 words
-        </button>
-        <button mat-raised-button color="accent" (click)="startStopReading()">
-          {{ isReading ? "Stop" : "Start" }}
+        <button (click)="startStopReading()">
+          <!-- {{ isReading ? "Stop" : "Start" }} -->
+          <ng-container *ngIf="isReading; else playIcon">
+            <!-- Pause Icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              fill="#fff"
+              viewBox="0 0 24 24"
+            >
+              <path d="M6 4h4v16H6zm8 0h4v16h-4z" />
+            </svg>
+          </ng-container>
+          <ng-template #playIcon>
+            <!-- Play Icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              fill="#fff"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5 3l14 9-14 9V3z" />
+            </svg>
+          </ng-template>
         </button>
       </div>
     </div>
