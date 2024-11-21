@@ -3,6 +3,12 @@
   background-color: #0a0903;
   max-width: 100vw;
 }
+
+:host {
+    font-family: var(--selected-font, 'Roboto'); // Default to Roboto if none selected
+    font-size: var(--selected-size, 16px);
+  }
+
 .sidenav {
   position: absolute;
   width: 250px;
